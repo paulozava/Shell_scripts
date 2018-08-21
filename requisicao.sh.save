@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ind=$(echo $1 | awk "{print toupper($1)}")
+
+case $ind in
+	GET)
+	cat apache.log | grep GET
+	;;
+	POST)
+	cat apache.log | grep POST
+	
+DELETE)
+	cat apache.log | grep DELETE
+	PUT)
+	cat apache.log | grep PUT
+	*)
+	echo "Parametro não existe"
